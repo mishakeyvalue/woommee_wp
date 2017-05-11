@@ -20,6 +20,8 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "node-stopwatch": "0.0.1",
-    "osmosis": "^1.1.4"
+    "osmosis": "^1.1.4",
+    "request": "^2.81.0",
+    "x-ray": "^2.3.2"
   }
 }

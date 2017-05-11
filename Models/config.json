@@ -1,0 +1,10 @@
+{
+    "Google": {
+        "token": "AIzaSyCvkKmMig8tTegz8n-Vkfsq3qYAVUlp9_g",
+        "uri": "https://maps.googleapis.com/maps/api/geocode/json"
+    },
+    "DarkSky":{
+        "token": "d007167c3f1faab216d8161cfc73bb84",
+        "uri" : "https://api.darksky.net/forecast/d007167c3f1faab216d8161cfc73bb84"
+    }
+}
