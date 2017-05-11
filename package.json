@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/mitutee/woommee_wp#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
     "osmosis": "^1.1.4"
   }
 }
