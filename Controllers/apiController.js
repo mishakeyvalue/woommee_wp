@@ -5,9 +5,12 @@ module.exports = function (app) {
     })
     app.get('/api/:city', function (req, res) {
         res.header("Content-Type", "application/json; charset=utf-8"); // encoding
-        let city = req.params.city;
+        let city = capitalizeFirstLetter(req.params.city);
         wp.get(city, function (weather) {
-            res.end(JSON.stringify(wp.get(city)))
+            res.end(JSON.stringify(weather))
         })
     })
+}
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }

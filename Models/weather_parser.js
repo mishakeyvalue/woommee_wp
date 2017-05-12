@@ -1,19 +1,19 @@
 'use strict';
 
 const fs = require('fs');
-const config = JSON.parse(fs.readFileSync('./config.json'));
+const config = JSON.parse(fs.readFileSync(__dirname + '/config.json'));
+const cities = JSON.parse(fs.readFileSync(__dirname + '/coords.json'));
 
 const request = require('request');
 
-const cities = { "Краматорск": {"latitude" : "50.1053867", "longitude" : "36.4558124"} }
-
-module.exports.get = function (city, cb) {
+module.exports.get = function (city, cb) {    
     let cityObj = cities[city];
-    let rq = `${config.DarkSky.uri}/${cityObj.latitude},${cityObj.longitude}?lang=ru`;
+    if(cityObj == undefined){
+        cb({error : "No such city in our list."})
+    }
+    let rq = `${config.DarkSky.uri}/${cityObj.location.lat},${cityObj.location.lng}?lang=ru`;
+
     request(rq, function(err, res, body){
-        console.log(body)
+        cb(body);
     })
 }
-
-
-module.exports.get('Краматорск');
