@@ -7,7 +7,7 @@ module.exports = function (app) {
         res.header("Content-Type", "application/json; charset=utf-8"); // encoding
         let city = capitalizeFirstLetter(req.params.city);
         wp.get(city, function (weather) {
-            res.end(JSON.stringify(weather))
+            res.end(weather)
         })
     })
 }
